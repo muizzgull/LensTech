@@ -75,22 +75,22 @@
 
     <!-- Navigation Bar -->
     <header class="sticky top-4 z-50 max-w-6xl mx-auto px-4">
-        <nav class="bg-white cartoon-border rounded-full p-4 shadow-cartoon flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 bg-popPink rounded-full cartoon-border flex items-center justify-center overflow-hidden group-hover:rotate-12 transition-transform">
+        <nav class="bg-white cartoon-border rounded-full p-3 sm:p-4 shadow-cartoon flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 sm:gap-3 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-popPink rounded-full cartoon-border flex items-center justify-center overflow-hidden group-hover:rotate-12 transition-transform">
                     <img src="/images/lt-logo.PNG" alt="LensTech Logo" class="w-full h-full object-cover">
                 </div>
-                <span class="text-2xl font-bold tracking-wide">Lens<span class="text-popBlue">Tech</span></span>
+                <span class="text-xl sm:text-2xl font-bold tracking-wide">Lens<span class="text-popBlue">Tech</span></span>
             </a>
 
-            <div class="hidden md:flex items-center gap-6 font-bold text-lg">
-                <a href="#services" class="hover:text-popPink transition-colors">Services 🎨</a>
-                <a href="#pricing" class="hover:text-popBlue transition-colors">Packages 📦</a>
-                <a href="#contact" class="hover:text-popGreen transition-colors">Contact 💌</a>
+            <div class="hidden md:flex items-center gap-12 font-bold text-lg">
+                <a href="#services" class="hover:text-popPink transition-colors">Services</a>
+                <a href="#pricing" class="hover:text-popBlue transition-colors">Plans</a>
+                <a href="#contact" class="hover:text-popGreen transition-colors">Contact</a>
             </div>
 
-            <a href="#contact" class="bg-popGreen text-popDark px-6 py-2 rounded-full cartoon-border font-bold shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
-                Let's Build! ✨
+            <a href="#contact" class="bg-popGreen text-popDark px-3 py-1.5 sm:px-6 sm:py-2 text-xs sm:text-base rounded-full cartoon-border font-bold shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
+                Let's Build!
             </a>
         </nav>
     </header>
@@ -107,11 +107,11 @@
                     We Turn Ideas <span class="bg-popBlue text-white px-3 py-1 rounded-2xl cartoon-border inline-block rotate-1 shadow-cartoon">INTO</span> Digital Worlds!
                 </h1>
                 <p class="text-xl font-medium text-slate-800">
-                    LensTech builds fast and interactive web experiences for brands that want to stand out in the crowd! 🎉
+                    LensTech builds interactive web experiences quickly for brands that want to stand out in the crowd! 🎉
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                     <a href="#pricing" class="bg-popBlue text-white text-xl font-bold px-8 py-4 rounded-2xl cartoon-border shadow-cartoon-lg hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all text-center">
-                        Pick a Package! 🎁
+                        Pick a Plan! 🎁
                     </a>
                     <a href="#services" class="bg-white text-popDark text-xl font-bold px-8 py-4 rounded-2xl cartoon-border shadow-cartoon-lg hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all text-center">
                         See Magic 🪄
@@ -207,11 +207,11 @@
             </div>
         </section>
 
-        <!-- Packages / Pricing Section -->
+        <!-- Plan / Pricing Section -->
         <section id="pricing" class="space-y-12">
             <div class="text-center space-y-4">
                 <h2 class="text-4xl font-extrabold bg-popGreen text-popDark inline-block px-6 py-2 rounded-2xl cartoon-border shadow-cartoon rotate-1">
-                    Pick Your Power-Up! 🎮
+                    Pick Your Plan!
                 </h2>
                 <p class="text-xl font-bold text-slate-800">Select a plan to start your web journey!</p>
             </div>
@@ -281,38 +281,38 @@
         </section>
 
         <!-- Interactive Contact Section -->
-        <section id="contact" class="bg-white p-8 md:p-12 rounded-3xl cartoon-border shadow-cartoon-lg space-y-8">
+        <section id="contact" class="bg-white p-6 sm:p-8 md:p-12 rounded-3xl cartoon-border shadow-cartoon-lg space-y-8">
             <div class="text-center space-y-2">
                 <h2 class="text-4xl font-extrabold text-popDark">Send Us A Message! 📮</h2>
-                <p class="text-slate-600 font-bold">Let's make your web project look awesome!</p>
+                <p class="text-slate-600 font-bold">Let's make your web project dream come true!</p>
             </div>
 
             <form id="contactForm" class="max-w-2xl mx-auto space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-2 gap-3 sm:gap-6">
                     <div class="space-y-2">
-                        <label class="font-bold text-sm">Your Name 👋</label>
-                        <input type="text" name="user_name" required placeholder="Super Developer" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors">
+                        <label class="font-bold text-xs sm:text-sm">Your Name 👋</label>
+                        <input type="text" name="user_name" required placeholder="Super Developer" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base font-bold focus:outline-none focus:bg-white transition-colors">
                     </div>
                     <div class="space-y-2">
-                        <label class="font-bold text-sm">Your Email 📧</label>
-                        <input type="email" name="user_email" required placeholder="hello@lensTech.com" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors">
+                        <label class="font-bold text-xs sm:text-sm">Your Email 📧</label>
+                        <input type="email" name="user_email" required placeholder="hello@lensTech.com" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base font-bold focus:outline-none focus:bg-white transition-colors">
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-2 gap-3 sm:gap-6">
                     <div class="space-y-2">
-                        <label class="font-bold text-sm">Phone Number 📞</label>
-                        <input type="tel" name="user_phone" required placeholder="+92 300 1234567" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors">
+                        <label class="font-bold text-xs sm:text-sm">Phone Number 📞</label>
+                        <input type="tel" name="user_phone" required placeholder="+92 300 1234567" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base font-bold focus:outline-none focus:bg-white transition-colors">
                     </div>
                     <div class="space-y-2">
-                        <label class="font-bold text-sm">Selected Package 🎁</label>
-                        <input type="text" id="selectedPlanInput" name="selected_package" value="Mega Rocket 🛸" readonly class="w-full bg-popGreen/20 cartoon-border rounded-xl px-4 py-3 font-bold cursor-not-allowed">
+                        <label class="font-bold text-xs sm:text-sm">Selected Package 🎁</label>
+                        <input type="text" id="selectedPlanInput" name="selected_package" value="Mega Rocket 🛸" readonly class="w-full bg-popGreen/20 cartoon-border rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base font-bold cursor-not-allowed">
                     </div>
                 </div>
 
                 <div class="space-y-2">
-                    <label class="font-bold text-sm">Tell Us About Your Project 📝</label>
-                    <textarea name="message" rows="4" placeholder="I need a website that looks super cool..." class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors"></textarea>
+                    <label class="font-bold text-xs sm:text-sm">Tell Us About Your Project 📝</label>
+                    <textarea name="message" rows="4" placeholder="I need a website that looks super cool..." class="w-full bg-popYellow/20 cartoon-border rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base font-bold focus:outline-none focus:bg-white transition-colors"></textarea>
                 </div>
 
                 <button type="submit" id="submitBtn" class="w-full bg-popPink text-white text-xl font-bold py-4 rounded-2xl cartoon-border shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
@@ -329,7 +329,7 @@
             <div class="flex items-center gap-2">
                 <span class="font-bold text-xl">LensTech Agency.</span>
             </div>
-            <p class="text-sm font-bold text-slate-400">@ 2026 LensTech. Crafted your website with LensTech.</p>
+            <p class="text-sm font-bold text-slate-400">@ 2026 LensTech. Craft your website with LensTech.</p>
         </div>
     </footer>
 

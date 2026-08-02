@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LENSTECH | Radical Web Development & Digital Engineering</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Syne & JetBrains Mono for Maximalist Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            neonYellow: '#CCFF00',
+            neonPink: '#FF007F',
+            neonCyan: '#00F0FF',
+            darkVoid: '#080808',
+            rawPurple: '#7000FF'
+          },
+          animation: {
+            'marquee': 'marquee 15s linear infinite',
+            'spin-slow': 'spin 12s linear infinite',
+            'bounce-fast': 'bounce 0.8s infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Maximalist Custom Styles */
+    body {
+      background-color: #080808;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .brutal-border {
+      border: 3px solid #ffffff;
+    }
+
+    .brutal-shadow-yellow {
+      box-shadow: 8px 8px 0px 0px #CCFF00;
+    }
+
+    .brutal-shadow-pink {
+      box-shadow: 8px 8px 0px 0px #FF007F;
+    }
+
+    .brutal-shadow-cyan {
+      box-shadow: 8px 8px 0px 0px #00F0FF;
+    }
+
+    .grid-bg {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    }
+
+    .text-stroke-white {
+      -webkit-text-stroke: 2px #ffffff;
+      color: transparent;
+    }
+
+    .text-stroke-pink {
+      -webkit-text-stroke: 2px #FF007F;
+      color: transparent;
+    }
+
+    .noise-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      content: "";
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 999;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+    }
+  </style>
+</head>
+<body class="grid-bg font-sans selection:bg-neonYellow selection:text-darkVoid">
+
+  <!-- Static Noise Layer -->
+  <div class="noise-overlay"></div>
+
+  <!-- TICKER MARQUEE HEADER -->
+  <div class="bg-neonYellow text-darkVoid font-mono font-extrabold text-sm py-2 overflow-hidden border-b-4 border-white whitespace-nowrap z-50 relative">
+    <div class="inline-block animate-marquee uppercase tracking-widest">
+      🚀 NOW ACCEPTING Q3/Q4 PROJECTS • WE BUILD HIGH-CONVERTING DIGITAL WEAPONS • NO BORING TEMPLATES • FULL-STACK DOMINANCE • ⚡ LENSTECH WEB LABS ⚡ • NOW ACCEPTING Q3/Q4 PROJECTS • WE BUILD HIGH-CONVERTING DIGITAL WEAPONS • NO BORING TEMPLATES •
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-darkVoid/90 backdrop-blur-md border-b-4 border-white px-6 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="#" class="text-3xl font-black tracking-tighter text-neonYellow flex items-center gap-2">
+        <span class="bg-neonPink text-white px-2 py-1 transform -rotate-3 border-2 border-white">LENS</span>TECH
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 font-mono font-bold text-sm">
+        <a href="#services" class="hover:text-neonCyan transition-all hover:underline decoration-wavy decoration-2">/SERVICES</a>
+        <a href="#work" class="hover:text-neonPink transition-all hover:underline decoration-wavy decoration-2">/WORK</a>
+        <a href="#about" class="hover:text-neonYellow transition-all hover:underline decoration-wavy decoration-2">/MANIFESTO</a>
+        <a href="#contact" class="bg-neonCyan text-darkVoid px-6 py-2 border-2 border-white font-extrabold brutal-shadow-pink hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          GET IN TOUCH
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[90vh] flex items-center justify-center px-4 py-20 overflow-hidden">
+    <!-- Floating Decorative Maximalist Elements -->
+    <div class="absolute top-10 left-5 bg-rawPurple text-white p-4 border-2 border-white brutal-shadow-yellow transform -rotate-12 hidden lg:block font-mono text-xs">
+      &lt;div class="CHAOS"&gt;<br>&nbsp;&nbsp;100% CUSTOM CODE<br>&lt;/div&gt;
+    </div>
+    <div class="absolute bottom-16 right-10 bg-neonPink text-white p-6 border-2 border-white brutal-shadow-cyan transform rotate-6 hidden lg:block font-extrabold">
+      ⚡ NO BOOTSTRAP BLANDNESS
+    </div>
+
+    <div class="max-w-5xl mx-auto text-center z-10">
+      <div class="inline-block bg-white text-darkVoid font-mono font-extrabold px-4 py-1 border-2 border-neonYellow transform rotate-2 mb-6 text-sm">
+        /// WE DON'T BUILD WEBSITES. WE BUILD DIGITAL MONUMENTS.
+      </div>
+      
+      <h1 class="text-5xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight leading-none mb-8">
+        WE MAKE THE <br>
+        <span class="text-stroke-white hover:text-neonCyan transition-all duration-300">INTERNET</span> <br>
+        <span class="bg-gradient-to-r from-neonYellow via-neonPink to-neonCyan text-transparent bg-clip-text">LOUD AGAIN.</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl font-mono text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+        High-performance frontend architecture, custom web applications, and hyper-scalable e-commerce layouts built to destroy your competition.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+        <a href="#contact" class="w-full sm:w-auto bg-neonYellow text-darkVoid font-extrabold text-xl px-10 py-5 border-4 border-white brutal-shadow-pink hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          START A PROJECT 🔥
+        </a>
+        <a href="#work" class="w-full sm:w-auto bg-transparent text-white font-extrabold text-xl px-10 py-5 border-4 border-white brutal-shadow-yellow hover:bg-white hover:text-darkVoid transition-all">
+          EXPLORE WORK 👁️
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE BARRIER -->
+  <div class="bg-rawPurple py-4 border-y-4 border-white transform -rotate-1 scale-105 overflow-hidden my-12">
+    <div class="flex gap-8 whitespace-nowrap animate-marquee font-black text-2xl tracking-wider text-neonYellow">
+      <span>TAILWIND CSS</span> <span>★</span>
+      <span>JAMSTACK</span> <span>★</span>
+      <span>REACT / NEXT.JS</span> <span>★</span>
+      <span>HIGH CONVERSION RATES</span> <span>★</span>
+      <span>API INTEGRATION</span> <span>★</span>
+      <span>PERFORMANCE OPTIMIZATION</span> <span>★</span>
+    </div>
+  </div>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="mb-16">
+      <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-2">
+        CAPABILITIES <span class="text-neonPink">[01]</span>
+      </h2>
+      <p class="font-mono text-neonCyan">// WHAT WE DO BEST FOR HIGH-GROWTH BRANDS</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-darkVoid p-8 brutal-border brutal-shadow-yellow hover:-translate-y-2 transition-all relative group">
+        <div class="text-4xl font-mono text-neonYellow mb-4">01/</div>
+        <h3 class="text-3xl font-black mb-4 group-hover:text-neonYellow transition-colors">FULL-STACK WEB DEV</h3>
+        <p class="font-mono text-gray-400 mb-6 text-sm">
+          Custom interactive platforms built with zero bloated page builders. Fast, secure, and tailored explicitly to your operational workflows.
+        </p>
+        <div class="flex flex-wrap gap-2 font-mono text-xs">
+          <span class="bg-white/10 px-2 py-1 border border-white">React</span>
+          <span class="bg-white/10 px-2 py-1 border border-white">Tailwind</span>
+          <span class="bg-white/10 px-2 py-1 border border-white">Node.js</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-rawPurple p-8 brutal-border brutal-shadow-pink hover:-translate-y-2 transition-all relative group">
+        <div class="text-4xl font-mono text-white mb-4">02/</div>
+        <h3 class="text-3xl font-black mb-4 text-white">E-COMMERCE ENGINES</h3>
+        <p class="font-mono text-gray-200 mb-6 text-sm">
+          Custom storefront design, headless checkouts, payment gateway configurations, and dynamic product selectors built to drive sales.
+        </p>
+        <div class="flex flex-wrap gap-2 font-mono text-xs">
+          <span class="bg-black/40 px-2 py-1 border border-white text-white">Shopify</span>
+          <span class="bg-black/40 px-2 py-1 border border-white text-white">Custom Cart</span>
+          <span class="bg-black/40 px-2 py-1 border border-white text-white">Stripe</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-darkVoid p-8 brutal-border brutal-shadow-cyan hover:-translate-y-2 transition-all relative group">
+        <div class="text-4xl font-mono text-neonCyan mb-4">03/</div>
+        <h3 class="text-3xl font-black mb-4 group-hover:text-neonCyan transition-colors">UI/UX MAXIMALISM</h3>
+        <p class="font-mono text-gray-400 mb-6 text-sm">
+          Unforgettable brand identity and frontend layouts designed to hold user attention and convert visitors into long-term loyalists.
+        </p>
+        <div class="flex flex-wrap gap-2 font-mono text-xs">
+          <span class="bg-white/10 px-2 py-1 border border-white">Brutalism</span>
+          <span class="bg-white/10 px-2 py-1 border border-white">Wireframing</span>
+          <span class="bg-white/10 px-2 py-1 border border-white">Figma</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED WORK SECTION -->
+  <section id="work" class="py-20 px-4 bg-white text-darkVoid border-y-4 border-black">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+        <div>
+          <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tight">
+            SELECTED <br><span class="text-stroke-pink">WORKS</span>
+          </h2>
+        </div>
+        <div class="font-mono font-bold text-lg text-neonPink mt-4 md:mt-0">
+          [ PROOF OVER PROMISES ]
+        </div>
+      </div>
+
+      <!-- Work Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <!-- Project Item 1 -->
+        <div class="border-4 border-black bg-darkVoid text-white p-6 brutal-shadow-pink">
+          <div class="h-64 bg-neonYellow border-2 border-white mb-6 flex items-center justify-center font-black text-darkVoid text-3xl p-4 text-center">
+            [ SHEPUNZEL BEAUTY STORE ]
+          </div>
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-2xl font-black">SHEPUNZEL</h3>
+            <span class="font-mono text-xs bg-neonPink text-white px-2 py-1 border border-white">E-COMMERCE</span>
+          </div>
+          <p class="font-mono text-gray-300 text-sm mb-6">
+            Custom interactive online store featuring custom shade selectors, high-contrast layouts, and seamless email notification checkouts.
+          </p>
+          <a href="#" class="inline-block font-mono font-bold text-neonYellow hover:underline">VIEW CASE STUDY →</a>
+        </div>
+
+        <!-- Project Item 2 -->
+        <div class="border-4 border-black bg-darkVoid text-white p-6 brutal-shadow-yellow">
+          <div class="h-64 bg-neonCyan border-2 border-white mb-6 flex items-center justify-center font-black text-darkVoid text-3xl p-4 text-center">
+            [ HYSS APPAREL LAB ]
+          </div>
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-2xl font-black">HYSS CLOTHING</h3>
+            <span class="font-mono text-xs bg-rawPurple text-white px-2 py-1 border border-white">WEB APP</span>
+          </div>
+          <p class="font-mono text-gray-300 text-sm mb-6">
+            Minimalist geometric brand layout integrated with user input fields for custom graphic apparel configurations.
+          </p>
+          <a href="#" class="inline-block font-mono font-bold text-neonCyan hover:underline">VIEW CASE STUDY →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS / WHY US SECTION -->
+  <section id="about" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <div class="lg:col-span-6">
+        <h2 class="text-4xl md:text-6xl font-black uppercase mb-6 leading-tight">
+          WE BUILD WEBSITES THAT <span class="bg-neonPink px-2">COMMAND</span> RESPECT.
+        </h2>
+        <p class="font-mono text-gray-300 mb-6 leading-relaxed">
+          The web has become boring—over-saturated with dull templates and generic AI-generated sites. LensTech disrupts the noise. We combine razor-sharp engineering with maximalist design to build digital experiences that stick.
+        </p>
+        <ul class="font-mono space-y-3 mb-8 text-neonYellow">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-neonPink"></i> 100% Mobile Responsive Optimization</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-neonPink"></i> High-Speed Performance & SEO Ready</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-neonPink"></i> Direct Client Communication Channel</li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+        <div class="bg-darkVoid p-6 border-4 border-white brutal-shadow-yellow text-center">
+          <div class="text-5xl font-black text-neonYellow mb-2">99%</div>
+          <div class="font-mono text-xs uppercase">Client Satisfaction</div>
+        </div>
+        <div class="bg-darkVoid p-6 border-4 border-white brutal-shadow-pink text-center">
+          <div class="text-5xl font-black text-neonPink mb-2">&lt;1s</div>
+          <div class="font-mono text-xs uppercase">Avg Load Time</div>
+        </div>
+        <div class="bg-darkVoid p-6 border-4 border-white brutal-shadow-cyan text-center">
+          <div class="text-5xl font-black text-neonCyan mb-2">24/7</div>
+          <div class="font-mono text-xs uppercase">Code Reliability</div>
+        </div>
+        <div class="bg-rawPurple p-6 border-4 border-white brutal-shadow-yellow text-center">
+          <div class="text-5xl font-black text-white mb-2">100%</div>
+          <div class="font-mono text-xs uppercase">Custom Code</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-20 px-4 bg-neonYellow text-darkVoid border-t-4 border-white">
+    <div class="max-w-4xl mx-auto bg-darkVoid text-white p-8 md:p-12 border-4 border-white brutal-shadow-pink">
+      
+      <div class="text-center mb-10">
+        <h2 class="text-4xl md:text-6xl font-black uppercase mb-2">LET'S BUILD SOMETHING WILD</h2>
+        <p class="font-mono text-neonYellow">// READY TO UPGRADE YOUR DIGITAL PRESENCE?</p>
+      </div>
+
+      <form action="#" method="POST" class="space-y-6 font-mono">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs uppercase font-bold mb-2">Your Name *</label>
+            <input type="text" required placeholder="John Doe" class="w-full bg-black border-2 border-white p-4 text-white focus:outline-none focus:border-neonCyan">
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-bold mb-2">Email Address *</label>
+            <input type="email" required placeholder="john@company.com" class="w-full bg-black border-2 border-white p-4 text-white focus:outline-none focus:border-neonCyan">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase font-bold mb-2">Service Needed</label>
+          <select class="w-full bg-black border-2 border-white p-4 text-white focus:outline-none focus:border-neonCyan">
+            <option>Full Web Development</option>
+            <option>E-Commerce Storefront</option>
+            <option>UI/UX Redesign</option>
+            <option>Custom Web Application</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase font-bold mb-2">Project Scope / Details *</label>
+          <textarea rows="4" required placeholder="Tell us about your brand, goals, and timeline..." class="w-full bg-black border-2 border-white p-4 text-white focus:outline-none focus:border-neonCyan"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-neonPink text-white font-extrabold text-xl py-5 border-2 border-white brutal-shadow-cyan hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all uppercase tracking-widest">
+          SEND MESSAGE 🚀
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-darkVoid border-t-4 border-white py-12 px-4 font-mono text-sm">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <div>
+        <a href="#" class="text-2xl font-black tracking-tighter text-neonYellow">
+          LENSTECH<span class="text-neonPink">.AGENCY</span>
+        </a>
+        <p class="text-gray-400 text-xs mt-1">© 2026 LENSTECH. ALL RIGHTS RESERVED.</p>
+      </div>
+
+      <div class="flex gap-6 text-xl">
+        <a href="#" class="hover:text-neonYellow transition-colors"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="hover:text-neonCyan transition-colors"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="hover:text-neonPink transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-neonYellow transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

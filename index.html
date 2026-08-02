@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LensTech 🚀 - Web Magic Agency!</title>
-    <!-- Google Fonts: Fredoka & Comic Neue for a Playful Cartoon Aesthetic -->
+    <!-- Google Fonts: Fredoka & JetBrains Mono for Code -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/images/lt-logo.PNG">
-    <link rel="stylesheet" href="styles.css">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -18,6 +18,7 @@
                 extend: {
                     fontFamily: {
                         cartoon: ['Fredoka', 'sans-serif'],
+                        code: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
                         popYellow: '#FFDE59',
@@ -36,29 +37,58 @@
             }
         }
     </script>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // Replace with your actual EmailJS Public Key
+            emailjs.init("wgoq7xcLbnYxDE_Iy");
+        })();
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .cartoon-border {
+            border: 3px solid #1E1E1E;
+        }
+        
+        /* Blinking cursor animation */
+        .typing-cursor::after {
+            content: '|';
+            display: inline-block;
+            margin-left: 2px;
+            color: #FF66C4;
+            font-weight: bold;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 <body class="bg-popYellow font-cartoon text-popDark selection:bg-popPink selection:text-white min-h-screen">
 
     <!-- Navigation Bar -->
     <header class="sticky top-4 z-50 max-w-6xl mx-auto px-4">
         <nav class="bg-white cartoon-border rounded-full p-4 shadow-cartoon flex items-center justify-between">
-            <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <!-- Image Container keeping original size & cartoon border styling -->
                 <div class="w-12 h-12 bg-popPink rounded-full cartoon-border flex items-center justify-center overflow-hidden group-hover:rotate-12 transition-transform">
                     <img src="/images/lt-logo.PNG" alt="LensTech Logo" class="w-full h-full object-cover">
                 </div>
                 <span class="text-2xl font-bold tracking-wide">Lens<span class="text-popBlue">Tech</span></span>
             </a>
 
-            <!-- Nav Links -->
             <div class="hidden md:flex items-center gap-6 font-bold text-lg">
                 <a href="#services" class="hover:text-popPink transition-colors">Services 🎨</a>
                 <a href="#pricing" class="hover:text-popBlue transition-colors">Packages 📦</a>
                 <a href="#contact" class="hover:text-popGreen transition-colors">Contact 💌</a>
             </div>
 
-            <!-- CTA Button -->
             <a href="#contact" class="bg-popGreen text-popDark px-6 py-2 rounded-full cartoon-border font-bold shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
                 Let's Build! ✨
             </a>
@@ -71,13 +101,13 @@
         <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-8">
             <div class="space-y-6 text-center lg:text-left">
                 <div class="inline-block bg-popPink text-white px-4 py-1 rounded-full cartoon-border font-bold text-sm shadow-cartoon animate-wiggle">
-                    🚀 Super Cool Websites Ahead!
+                    🚀 Websites Ahead!
                 </div>
                 <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight">
-                    We Turn Boring Websites Into <span class="bg-popBlue text-white px-3 py-1 rounded-2xl cartoon-border inline-block rotate-1 shadow-cartoon">FUN</span> Digital Worlds!
+                    We Turn Ideas <span class="bg-popBlue text-white px-3 py-1 rounded-2xl cartoon-border inline-block rotate-1 shadow-cartoon">INTO</span> Digital Worlds!
                 </h1>
                 <p class="text-xl font-medium text-slate-800">
-                    LensTech builds fast, interactive, and eye-popping web experiences for brands that want to stand out from the crowd! 🎉
+                    LensTech builds fast and interactive web experiences for brands that want to stand out in the crowd! 🎉
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                     <a href="#pricing" class="bg-popBlue text-white text-xl font-bold px-8 py-4 rounded-2xl cartoon-border shadow-cartoon-lg hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all text-center">
@@ -89,24 +119,48 @@
                 </div>
             </div>
 
-            <!-- Animated Cartoon Lens Character Mascot -->
+            <!-- Hero Cartoon IDE Container -->
             <div class="flex justify-center relative">
-                <div class="w-72 h-72 sm:w-80 sm:h-80 bg-popBlue rounded-full cartoon-border shadow-cartoon-lg flex items-center justify-center relative animate-float">
-                    <!-- Glass Shine -->
-                    <div class="absolute top-8 left-8 w-16 h-16 bg-white/40 rounded-full"></div>
-                    <!-- Eyes Container -->
-                    <div class="flex gap-6 z-10">
-                        <div class="w-16 h-20 bg-white rounded-full cartoon-border flex items-center justify-center relative">
-                            <div class="w-8 h-8 bg-popDark rounded-full animate-bounce"></div>
+                <div class="w-full max-w-md bg-popDark rounded-3xl cartoon-border shadow-cartoon-lg overflow-hidden transform hover:-rotate-1 transition-transform">
+                    <!-- Window Topbar -->
+                    <div class="bg-slate-800 px-4 py-3 border-b-4 border-popDark flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 bg-popPink rounded-full border-2 border-popDark inline-block"></span>
+                            <span class="w-3.5 h-3.5 bg-popYellow rounded-full border-2 border-popDark inline-block"></span>
+                            <span class="w-3.5 h-3.5 bg-popGreen rounded-full border-2 border-popDark inline-block"></span>
                         </div>
-                        <div class="w-16 h-20 bg-white rounded-full cartoon-border flex items-center justify-center relative">
-                            <div class="w-8 h-8 bg-popDark rounded-full animate-bounce"></div>
+                        <div class="text-xs font-bold font-code text-slate-300 bg-popDark/60 px-3 py-1 rounded-full border border-slate-700 flex items-center gap-1.5">
+                            <span class="text-popPink">⚡</span> LensTech.js
                         </div>
                     </div>
-                    <!-- Smile Mouth -->
-                    <div class="absolute bottom-16 w-20 h-10 border-b-8 border-popDark rounded-b-full"></div>
-                    <!-- Handle -->
-                    <div class="absolute -bottom-10 -right-4 w-12 h-36 bg-popPink cartoon-border rounded-full transform rotate-45 -z-10"></div>
+
+                    <!-- IDE Code Content Area -->
+                    <div class="p-6 font-code text-sm sm:text-base space-y-3 min-h-[220px] flex flex-col justify-start text-left bg-[#121212]">
+                        <!-- Static imports/setup lines -->
+                        <div class="text-slate-500 font-bold">
+                            <span class="text-popPurple">const</span> agency = <span class="text-popYellow">'LensTech'</span>;
+                        </div>
+                        <div class="text-slate-500 font-bold">
+                            <span class="text-popPurple">function</span> <span class="text-popGreen">buildAwesomeWeb</span>() {
+                        </div>
+                        
+                        <!-- Dynamic Typing Target Line -->
+                        <div class="pl-4 font-bold flex items-center min-h-[32px]">
+                            <span id="codeTyping" class="text-popYellow typing-cursor"></span>
+                        </div>
+
+                        <!-- Static Closing Line -->
+                        <div class="text-slate-500 font-bold">
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Bottom Status Bar -->
+                    <div class="bg-popPurple px-4 py-2 border-t-4 border-popDark flex items-center justify-between text-xs font-bold text-white">
+                        <span>UTF-8</span>
+                        <span class="animate-pulse">● LIVE CODE</span>
+                        <span>JavaScript</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -115,42 +169,39 @@
         <section id="services" class="space-y-12">
             <div class="text-center space-y-4">
                 <h2 class="text-4xl font-extrabold bg-popPurple text-white inline-block px-6 py-2 rounded-2xl cartoon-border shadow-cartoon -rotate-1">
-                    What We Create! 🛠️
+                    What We Do! 🛠️
                 </h2>
-                <p class="text-xl font-bold text-slate-800">No boring templates here. Everything built from scratch!</p>
+                <p class="text-xl font-bold text-slate-800">Websites for Businesses</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div class="bg-white p-8 rounded-3xl cartoon-border shadow-cartoon-lg hover:-translate-y-2 transition-transform space-y-4">
                     <div class="w-16 h-16 bg-popPink rounded-2xl cartoon-border flex items-center justify-center text-3xl shadow-cartoon">
                         💻
                     </div>
                     <h3 class="text-2xl font-bold">Custom Web Builds</h3>
                     <p class="font-medium text-slate-700">
-                        Ultra-fast responsive single-page and multi-page sites custom-coded to look totally unique!
+                        Responsive single-page and multi-page sites for your Business according to your need and satisfaction!
                     </p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bg-white p-8 rounded-3xl cartoon-border shadow-cartoon-lg hover:-translate-y-2 transition-transform space-y-4">
                     <div class="w-16 h-16 bg-popYellow rounded-2xl cartoon-border flex items-center justify-center text-3xl shadow-cartoon">
                         🛍️
                     </div>
-                    <h3 class="text-2xl font-bold">E-Commerce Shops</h3>
+                    <h3 class="text-2xl font-bold">Domains</h3>
                     <p class="font-medium text-slate-700">
-                        Fun product catalogs with interactive shade selectors, dynamic carts, and custom checkout setups.
+                        Buy and add domain of your choice to your website.
                     </p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bg-white p-8 rounded-3xl cartoon-border shadow-cartoon-lg hover:-translate-y-2 transition-transform space-y-4">
                     <div class="w-16 h-16 bg-popGreen rounded-2xl cartoon-border flex items-center justify-center text-3xl shadow-cartoon">
                         ⚡
                     </div>
-                    <h3 class="text-2xl font-bold">Cloud & DNS Setup</h3>
+                    <h3 class="text-2xl font-bold">Hosting</h3>
                     <p class="font-medium text-slate-700">
-                        Cloudflare SSL protection, speed optimization, and custom domain configuration handled seamlessly.
+                        Host your website so that it can be accessed by anyone, anywhere, anytime!
                     </p>
                 </div>
             </div>
@@ -162,62 +213,67 @@
                 <h2 class="text-4xl font-extrabold bg-popGreen text-popDark inline-block px-6 py-2 rounded-2xl cartoon-border shadow-cartoon rotate-1">
                     Pick Your Power-Up! 🎮
                 </h2>
-                <p class="text-xl font-bold text-slate-800">Simple plans to kickstart your web presence.</p>
+                <p class="text-xl font-bold text-slate-800">Select a plan to start your web journey!</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Starter Tier -->
-                <div class="bg-white p-8 rounded-3xl cartoon-border shadow-cartoon-lg flex flex-col justify-between space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch pt-4">
+                <!-- Starter Tier Card -->
+                <div id="card-starter" class="plan-card bg-white text-popDark p-8 rounded-3xl cartoon-border shadow-cartoon-lg flex flex-col justify-between space-y-6 transition-all duration-300">
                     <div class="space-y-4">
-                        <span class="bg-popYellow px-3 py-1 rounded-full cartoon-border font-bold text-xs">STARTER</span>
+                        <span class="bg-popYellow text-popDark px-3 py-1 rounded-full cartoon-border font-bold text-xs">STARTER</span>
                         <h3 class="text-3xl font-bold">Mini Booster 🚀</h3>
-                        <p class="text-slate-600 font-medium">Great for local businesses & quick online presence.</p>
+                        <p class="plan-subtext text-slate-600 font-medium">Great for local businesses & personal portfolios & quick online presence.</p>
                         <ul class="space-y-2 font-bold text-sm">
                             <li class="flex items-center gap-2">✅ Single Page Design</li>
                             <li class="flex items-center gap-2">✅ Mobile Friendly</li>
                             <li class="flex items-center gap-2">✅ Contact Form</li>
+                            <li class="flex items-center gap-2">✅ 1 Week Support after website launch</li>
                         </ul>
                     </div>
-                    <button onclick="selectPackage('Mini Booster')" class="w-full bg-popYellow text-popDark font-bold py-3 rounded-xl cartoon-border shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
+                    <button type="button" onclick="selectPackage('Mini Booster 🚀', 'card-starter')" class="w-full bg-popYellow text-popDark font-bold py-3 rounded-xl cartoon-border shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
                         Select Plan 🎈
                     </button>
                 </div>
 
-                <!-- Pro Tier (Featured) -->
-                <div class="bg-popPurple text-white p-8 rounded-3xl cartoon-border shadow-cartoon-lg flex flex-col justify-between space-y-6 relative transform md:-translate-y-4">
-                    <div class="absolute -top-4 right-6 bg-popPink text-white px-4 py-1 rounded-full cartoon-border font-bold text-xs shadow-cartoon animate-bounce">
-                        POPULAR CHOICE 🔥
+                <!-- Pro Tier Card (Starts Active) -->
+                <div id="card-pro" class="plan-card bg-popPurple text-white p-8 rounded-3xl cartoon-border shadow-cartoon-lg flex flex-col justify-between space-y-6 relative transform md:-translate-y-4 transition-all duration-300">
+                    <div class="absolute -top-4 right-6 bg-popPink text-white px-4 py-1 rounded-full cartoon-border font-bold text-xs shadow-cartoon animate-bounce z-10">
+                        RECOMMENDED 🔥
                     </div>
                     <div class="space-y-4">
                         <span class="bg-popPink text-white px-3 py-1 rounded-full cartoon-border font-bold text-xs">PRO TIER</span>
                         <h3 class="text-3xl font-bold">Mega Rocket 🛸</h3>
-                        <p class="text-purple-100 font-medium">Full feature interactive single/multi-page apps.</p>
+                        <p class="plan-subtext text-purple-100 font-medium">Full feature interactive single/multi-page apps.</p>
                         <ul class="space-y-2 font-bold text-sm">
-                            <li class="flex items-center gap-2">✅ Custom Dynamic UI</li>
+                            <li class="flex items-center gap-2">✅ Multi Pages</li>
+                            <li class="flex items-center gap-2">✅ Mobile Friendly</li>
+                            <li class="flex items-center gap-2">✅ Contact Form</li>
                             <li class="flex items-center gap-2">✅ Email Notifications</li>
-                            <li class="flex items-center gap-2">✅ Cloudflare & Domain Connect</li>
-                            <li class="flex items-center gap-2">✅ Basic SEO Optimization</li>
+                            <li class="flex items-center gap-2">✅ Cloudflare Hosting & Domain Connect</li>
+                            <li class="flex items-center gap-2">✅ Some other Basics that you want for your website</li>
+                            <li class="flex items-center gap-2">✅ 1 Month Support after website launch</li>
                         </ul>
                     </div>
-                    <button onclick="selectPackage('Mega Rocket')" class="w-full bg-popGreen text-popDark font-bold py-3 rounded-xl cartoon-border shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
+                    <button type="button" onclick="selectPackage('Mega Rocket 🛸', 'card-pro')" class="w-full bg-popGreen text-popDark font-bold py-3 rounded-xl cartoon-border shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
                         Select Plan 🎉
                     </button>
                 </div>
 
-                <!-- Enterprise Tier -->
-                <div class="bg-white p-8 rounded-3xl cartoon-border shadow-cartoon-lg flex flex-col justify-between space-y-6">
+                <!-- Enterprise Tier Card -->
+                <div id="card-enterprise" class="plan-card bg-white text-popDark p-8 rounded-3xl cartoon-border shadow-cartoon-lg flex flex-col justify-between space-y-6 transition-all duration-300">
                     <div class="space-y-4">
-                        <span class="bg-popBlue text-white px-3 py-1 rounded-full cartoon-border font-bold text-xs">STORE TIER</span>
-                        <h3 class="text-3xl font-bold">E-Com Empire 🛒</h3>
-                        <p class="text-slate-600 font-medium">For customized online shopping platforms.</p>
+                        <span class="bg-popBlue text-white px-3 py-1 rounded-full cartoon-border font-bold text-xs">ULTRA TIER</span>
+                        <h3 class="text-3xl font-bold">Super Mega Plan 👑</h3>
+                        <p class="plan-subtext text-slate-600 font-medium">Fully Customized and everything according to your needs.</p>
                         <ul class="space-y-2 font-bold text-sm">
-                            <li class="flex items-center gap-2">✅ Interactive Catalog</li>
-                            <li class="flex items-center gap-2">✅ Custom Product Inputs</li>
-                            <li class="flex items-center gap-2">✅ Checkout System</li>
-                            <li class="flex items-center gap-2">✅ Priority Support</li>
+                            <li class="flex items-center gap-2">✅ If You Can Dream It, We Build It</li>
+                            <li class="flex items-center gap-2">✅ Fully Personalized</li>
+                            <li class="flex items-center gap-2">✅ Built to Your Exact Specifications</li>
+                            <li class="flex items-center gap-2">✅ Unlimited Pages</li>
+                            <li class="flex items-center gap-2">✅ 3 Months Support after website launch</li>
                         </ul>
                     </div>
-                    <button onclick="selectPackage('E-Com Empire')" class="w-full bg-popBlue text-white font-bold py-3 rounded-xl cartoon-border shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
+                    <button type="button" onclick="selectPackage('Super Mega Plan 👑', 'card-enterprise')" class="w-full bg-popBlue text-white font-bold py-3 rounded-xl cartoon-border shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
                         Select Plan 👑
                     </button>
                 </div>
@@ -231,29 +287,35 @@
                 <p class="text-slate-600 font-bold">Let's make your web project look awesome!</p>
             </div>
 
-            <form id="contactForm" class="max-w-2xl mx-auto space-y-6" onsubmit="event.preventDefault(); alert('Message sent successfully! 🚀');">
+            <form id="contactForm" class="max-w-2xl mx-auto space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
                         <label class="font-bold text-sm">Your Name 👋</label>
-                        <input type="text" required placeholder="Super Developer" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors">
+                        <input type="text" name="user_name" required placeholder="Super Developer" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors">
                     </div>
                     <div class="space-y-2">
                         <label class="font-bold text-sm">Your Email 📧</label>
-                        <input type="email" required placeholder="hello@lensTech.com" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors">
+                        <input type="email" name="user_email" required placeholder="hello@lensTech.com" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors">
                     </div>
                 </div>
 
-                <div class="space-y-2">
-                    <label class="font-bold text-sm">Selected Package 🎁</label>
-                    <input type="text" id="selectedPlanInput" value="Mega Rocket 🛸" readonly class="w-full bg-popGreen/20 cartoon-border rounded-xl px-4 py-3 font-bold cursor-not-allowed">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="font-bold text-sm">Phone Number 📞</label>
+                        <input type="tel" name="user_phone" required placeholder="+92 300 1234567" class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-bold text-sm">Selected Package 🎁</label>
+                        <input type="text" id="selectedPlanInput" name="selected_package" value="Mega Rocket 🛸" readonly class="w-full bg-popGreen/20 cartoon-border rounded-xl px-4 py-3 font-bold cursor-not-allowed">
+                    </div>
                 </div>
 
                 <div class="space-y-2">
                     <label class="font-bold text-sm">Tell Us About Your Project 📝</label>
-                    <textarea rows="4" required placeholder="I need a website that looks super cool..." class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors"></textarea>
+                    <textarea name="message" rows="4" placeholder="I need a website that looks super cool..." class="w-full bg-popYellow/20 cartoon-border rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white transition-colors"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-popPink text-white text-xl font-bold py-4 rounded-2xl cartoon-border shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
+                <button type="submit" id="submitBtn" class="w-full bg-popPink text-white text-xl font-bold py-4 rounded-2xl cartoon-border shadow-cartoon hover:shadow-cartoon-hover hover:translate-x-1 hover:translate-y-1 transition-all">
                     Send Rocket Message! 🚀
                 </button>
             </form>
@@ -265,14 +327,115 @@
     <footer class="bg-popDark text-white py-8 border-t-4 border-popDark mt-12">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-2">
-                <span class="text-2xl">🔍</span>
-                <span class="font-bold text-xl">LensTech Agency</span>
+                <span class="font-bold text-xl">LensTech Agency.</span>
             </div>
-            <p class="text-sm font-bold text-slate-400">© 2026 LensTech. Crafted with pure CSS & Fun!</p>
+            <p class="text-sm font-bold text-slate-400">@ 2026 LensTech. Crafted your website with LensTech.</p>
         </div>
     </footer>
 
     <!-- Interactive JavaScript -->
-<script src="script.js"></script>
+    <script>
+        // Dynamic Code Typewriter & Eraser Effect for Hero Section IDE
+        const lines = [
+            'return "Magic UI ✨";',
+            'const speed = "100x";',
+            'launchRocket(); 🚀',
+            'return "High Conversions 📈";'
+        ];
+        
+        const el = document.getElementById('codeTyping');
+        let lineIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+
+        function typeLoop() {
+            const currentLine = lines[lineIdx];
+            
+            if (isDeleting) {
+                el.innerText = currentLine.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                el.innerText = currentLine.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIdx === currentLine.length) {
+                typeSpeed = 1800; // Pause at end of line
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                lineIdx = (lineIdx + 1) % lines.length;
+                typeSpeed = 400; // Pause before typing next line
+            }
+
+            setTimeout(typeLoop, typeSpeed);
+        }
+
+        // Initialize typewriter after window loads
+        document.addEventListener('DOMContentLoaded', () => {
+            if (el) typeLoop();
+        });
+
+        // Package selection logic
+        function selectPackage(packageName, cardId) {
+            const input = document.getElementById('selectedPlanInput');
+            if (input) {
+                input.value = packageName;
+            }
+
+            document.querySelectorAll('.plan-card').forEach(card => {
+                card.classList.remove('bg-popPurple', 'text-white', 'md:-translate-y-4');
+                card.classList.add('bg-white', 'text-popDark');
+                
+                const subtext = card.querySelector('.plan-subtext');
+                if (subtext) {
+                    subtext.classList.remove('text-purple-100');
+                    subtext.classList.add('text-slate-600');
+                }
+            });
+
+            const activeCard = document.getElementById(cardId);
+            if (activeCard) {
+                activeCard.classList.remove('bg-white', 'text-popDark');
+                activeCard.classList.add('bg-popPurple', 'text-white', 'md:-translate-y-4');
+                
+                const subtext = activeCard.querySelector('.plan-subtext');
+                if (subtext) {
+                    subtext.classList.remove('text-slate-600');
+                    subtext.classList.add('text-purple-100');
+                }
+            }
+
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // EmailJS Form Submission Handler
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerText = 'Sending Rocket... ⏳';
+
+            emailjs.sendForm('service_j6ykc3l', 'template_46t8276', this)
+                .then(function() {
+                    alert('Message sent successfully! 🚀 We will get back to you soon.');
+                    btn.disabled = false;
+                    btn.innerText = 'Send Rocket Message! 🚀';
+                    document.getElementById('contactForm').reset();
+                    document.getElementById('selectedPlanInput').value = 'Mega Rocket 🛸';
+                }, function(error) {
+                    alert('Oops! Failed to send message. Please check your credentials or try again.');
+                    console.error('EmailJS Error:', error);
+                    btn.disabled = false;
+                    btn.innerText = 'Send Rocket Message! 🚀';
+                });
+        });
+    </script>
 </body>
 </html>
